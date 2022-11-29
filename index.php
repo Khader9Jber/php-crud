@@ -13,13 +13,13 @@ $mysqli_result = mysqli_query($con, $sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Show Categories</title>
     <style>
-        table,
-        th,
-        td {
-            border: 1px solid black;
-            margin: 5px;
-            padding: 5px;
-        }
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        margin: 5px;
+        padding: 5px;
+    }
     </style>
 </head>
 
@@ -40,7 +40,7 @@ $mysqli_result = mysqli_query($con, $sql);
             <?php
             while ($row = mysqli_fetch_assoc($mysqli_result)) {
                 echo "<tr>
-                <td>{$row['id']}</td>
+                <td><a href=\"show_products.php?cat_id={$row['id']}\"> {$row['id']}</a></td>
                 <td>{$row['name']}</td>
                 <td><img width=\"50px\" src=\"upload/category/{$row['image']}\" alt=\"\"></td>
                 <td>{$row['created_at']}</td>
